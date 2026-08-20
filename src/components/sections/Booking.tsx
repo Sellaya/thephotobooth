@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -17,34 +16,26 @@ import {
   packageOptions,
   siteConfig,
 } from "@/lib/data";
+import { bookingPayloadSchema, type BookingPayload } from "@/lib/booking";
 import { cn } from "@/lib/utils";
 
 const todayIso = toLocalIso();
 
-const bookingSchema = z.object({
-  fullName: z.string().trim().min(2, "Please enter your full name."),
-  email: z.string().trim().email("Please enter a valid email address."),
-  phone: z
-    .string()
-    .trim()
-    .refine((v) => v.replace(/\D/g, "").length >= 7, {
-      message: "Please enter a valid phone number.",
-    }),
-  eventDate: z
-    .string()
-    .min(1, "Please select an event date.")
-    .refine((v) => v >= todayIso, {
+const bookingSchema = bookingPayloadSchema.superRefine((data, ctx) => {
+  if (data.eventDate < todayIso) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["eventDate"],
       message: "Please choose a date in the future.",
-    }),
-  eventType: z.string().min(1, "Please select an event type."),
-  package: z.string().optional(),
-  message: z.string().optional(),
+    });
+  }
 });
 
-type BookingFormValues = z.infer<typeof bookingSchema>;
+type BookingFormValues = BookingPayload;
 
 export function Booking() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -65,10 +56,29 @@ export function Booking() {
   });
 
   async function onSubmit(data: BookingFormValues) {
-    await new Promise((resolve) => setTimeout(resolve, 700));
-    console.log("Booking request (demo only, not sent anywhere):", data);
-    setSubmitted(true);
-    reset();
+    setSubmitError(null);
+    try {
+      const response = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = (await response.json().catch(() => ({}))) as {
+        error?: string;
+      };
+      if (!response.ok) {
+        setSubmitError(
+          result.error || "Something went wrong. Please try again or call us."
+        );
+        return;
+      }
+      setSubmitted(true);
+      reset();
+    } catch {
+      setSubmitError(
+        "We couldn't send your request. Please try again, or call or WhatsApp us."
+      );
+    }
   }
 
   return (
@@ -153,8 +163,8 @@ export function Booking() {
                     Thanks! Your request has been received.
                   </h4>
                   <p className="max-w-sm text-sm text-ink-700">
-                    This is a demo form, so nothing was actually sent yet.
-                    Connect it to email or a backend to go live.
+                    We&apos;ll confirm availability within 24 hours. Check your
+                    inbox for a copy of this request.
                   </p>
                   <Button variant="outline" onClick={() => setSubmitted(false)}>
                     Submit another request
@@ -291,13 +301,18 @@ export function Booking() {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="h-4 w-4 animate-spin" />
-                          Submitting…
+                          Sending…
                         </>
                       ) : (
                         "Submit Request"
                       )}
                     </Button>
                   </div>
+                  {submitError ? (
+                    <p className="text-sm text-red-600" role="alert">
+                      {submitError}
+                    </p>
+                  ) : null}
                 </motion.form>
               )}
             </AnimatePresence>
