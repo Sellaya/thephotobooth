@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Neutral base -- near-black ink through warm off-white paper */
+  --color-ink-950: #14110d;
+  --color-ink-900: #2d2722;
+  --color-ink-800: #3d3630;
+  --color-ink-700: #514a42;
+  --color-ink-500: #7a7168;
+  --color-ink-300: #b8aa95;
+
+  --color-paper-50: #fbf9f4;
+  --color-paper-100: #f5f0e6;
+  --color-paper-200: #e8dfcf;
+
+  /* Brand accents -- used sparingly on top of the neutral base */
+  --color-gold-400: #c3a978;
+  --color-gold-500: #b29a6a;
+  --color-gold-600: #8a7550;
+  --color-sage-500: #68705a;
+  --color-sage-600: #545a49;
+
+  --shadow-soft: 0 1px 2px rgba(20, 17, 13, 0.04), 0 12px 32px -12px rgba(20, 17, 13, 0.18);
+  --shadow-soft-lg: 0 4px 12px rgba(20, 17, 13, 0.06), 0 32px 64px -24px rgba(20, 17, 13, 0.28);
+  --shadow-btn: 0 8px 24px -10px rgba(178, 154, 106, 0.55);
+}
+
+@layer components {
+  .icon-btn {
+    @apply relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border transition-colors duration-300;
+  }
+
+  .icon-btn > svg {
+    @apply relative z-10 h-4 w-4;
+  }
+
+  .icon-btn::before {
+    content: "";
+    @apply absolute inset-0 origin-bottom scale-y-0 transition-transform duration-300 ease-out;
+  }
+
+  .icon-btn:hover::before,
+  .icon-btn:focus-visible::before {
+    @apply scale-y-100;
+  }
+
+  .icon-btn-light {
+    @apply border-ink-300/70 text-ink-700 hover:text-paper-50;
+  }
+
+  .icon-btn-light::before {
+    @apply bg-ink-950;
+  }
+
+  .icon-btn-dark {
+    @apply border-white/20 text-paper-50 hover:text-ink-950;
+  }
+
+  .icon-btn-dark::before {
+    @apply bg-gold-500;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-px w-0 bg-current transition-[width] duration-300 ease-out;
+  }
+
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    @apply w-full;
+  }
+
+  .btn-shine {
+    @apply pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/35 to-transparent transition-transform duration-700 ease-out;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper-50);
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-gold-500);
+  color: var(--color-paper-50);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Marquee animation for trusted-by logo strip */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+/* Subtle floating loop used by hero image cards */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--rot, 0deg)); }
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Focus ring consistent with fintech-style forms */
+:focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 2px;
+}
