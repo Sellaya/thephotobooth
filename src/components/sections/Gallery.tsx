@@ -16,11 +16,11 @@ const spanClasses: Record<string, string> = {
 
 export function Gallery() {
   return (
-    <section id="gallery" className="bg-paper-50 py-24 sm:py-32">
+    <section id="gallery" className="bg-paper-50 py-16 sm:py-24 lg:py-32">
       <Container>
         <SectionHeading eyebrow="Recent Events" title="Straight out of the booth" />
 
-        <RevealGroup className="mt-16 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:auto-rows-[160px] sm:gap-3">
+        <RevealGroup className="mt-10 grid grid-cols-2 gap-2 sm:mt-16 sm:grid-cols-4 sm:auto-rows-[160px] sm:gap-3">
           {galleryItems.map((item) => (
             <motion.div
               key={item.label}

@@ -9,7 +9,7 @@ import { testimonials } from "@/lib/data";
 
 export function Testimonials() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-16 sm:py-24 lg:py-32">
       <Container>
         <SectionHeading
           eyebrow="Testimonials"
@@ -17,7 +17,7 @@ export function Testimonials() {
           description="Real reviews from Google."
         />
 
-        <RevealGroup className="mt-16 grid gap-10 sm:grid-cols-2 sm:gap-12">
+        <RevealGroup className="mt-10 grid gap-8 sm:mt-16 sm:grid-cols-2 sm:gap-12">
           {testimonials.map((testimonial) => (
             <motion.figure
               key={testimonial.name}

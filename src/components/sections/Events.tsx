@@ -9,11 +9,11 @@ import { events } from "@/lib/data";
 
 export function Events() {
   return (
-    <section id="events" className="bg-white py-24 sm:py-32">
+    <section id="events" className="bg-white py-16 sm:py-24 lg:py-32">
       <Container>
         <SectionHeading title="Wherever the party is, we show up" />
 
-        <RevealGroup className="mt-16 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        <RevealGroup className="mt-10 grid gap-8 sm:mt-16 sm:grid-cols-3 sm:gap-8">
           {events.map((event) => {
             const Icon = iconMap[event.icon as keyof typeof iconMap];
             return (

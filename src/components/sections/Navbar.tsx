@@ -58,64 +58,38 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const progress = Math.min(1, scrollY / 88);
-  const compact = progress > 0.12 && !open;
-  const glass = !open && progress > 0;
+  const scrolled = scrollY > 10 && !open;
 
   return (
     <>
       <header className="sticky top-0 z-50">
         <div
           className={cn(
-            "border-b transition-[height,border-color] duration-300 ease-out",
+            "border-b transition-colors duration-300 ease-out",
             open && "border-transparent bg-ink-950",
-            !open && !glass && "border-transparent bg-transparent",
-            glass && "border-ink-950/8"
+            !open && !scrolled && "border-transparent bg-transparent",
+            scrolled &&
+              "border-ink-300/25 bg-paper-50/95 shadow-[0_10px_30px_-20px_rgba(20,17,13,0.35)] backdrop-blur-md"
           )}
-          style={
-            glass
-              ? {
-                  backgroundColor: `rgba(251, 249, 244, ${0.42 + progress * 0.5})`,
-                  backdropFilter: `blur(${10 + progress * 14}px) saturate(1.35)`,
-                  WebkitBackdropFilter: `blur(${10 + progress * 14}px) saturate(1.35)`,
-                  boxShadow: `0 1px 0 rgba(20, 17, 13, ${0.03 + progress * 0.05}), 0 12px 40px -24px rgba(20, 17, 13, ${progress * 0.22})`,
-                }
-              : undefined
-          }
         >
-          <Container
-            className={cn(
-              "flex items-center justify-between transition-[height] duration-300 ease-out",
-              compact ? "h-14 sm:h-16" : "h-16 sm:h-[4.25rem]"
-            )}
-          >
+          <Container className="flex h-16 items-center justify-between gap-3 sm:h-[4.25rem]">
             <Link
               href="#home"
               onClick={() => setOpen(false)}
-              className="relative z-10 flex items-center"
+              className="relative z-10 flex shrink-0 items-center"
             >
               <Image
                 src={open ? "/images/logo-footer.png" : "/images/logo.png"}
                 alt={siteConfig.name}
                 width={140}
                 height={54}
-                className={cn(
-                  "w-auto transition-all duration-300 hover:opacity-75",
-                  compact ? "h-8 sm:h-9" : "h-9 sm:h-10"
-                )}
+                className="h-8 w-auto sm:h-10"
                 priority
               />
             </Link>
 
-            <nav className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
-              <ul
-                className={cn(
-                  "flex items-center gap-0.5 p-1 transition-all duration-300",
-                  compact
-                    ? "rounded-none border-transparent bg-transparent"
-                    : "rounded-full border border-ink-300/25 bg-white/50 backdrop-blur-sm"
-                )}
-              >
+            <nav className="hidden min-w-0 flex-1 justify-center lg:flex">
+              <ul className="flex items-center gap-0.5">
                 {navLinks.map((link) => {
                   const active = activeHref === link.href;
                   return (
@@ -123,9 +97,9 @@ export function Navbar() {
                       <Link
                         href={link.href}
                         className={cn(
-                          "block rounded-full px-3.5 py-1.5 text-[13px] font-medium tracking-tight transition-all duration-300",
+                          "block whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-medium tracking-tight transition-all duration-300 xl:px-3.5",
                           active
-                            ? "bg-ink-950 text-paper-50 shadow-soft"
+                            ? "bg-ink-950 text-paper-50"
                             : "text-ink-700 hover:bg-ink-950/5 hover:text-ink-950"
                         )}
                       >
@@ -137,14 +111,14 @@ export function Navbar() {
               </ul>
             </nav>
 
-            <div className="relative z-10 flex items-center gap-2 sm:gap-3">
+            <div className="relative z-10 flex shrink-0 items-center gap-2">
               <a
                 href={siteConfig.phoneHref}
-                className="link-underline hidden text-sm font-medium text-ink-700 xl:inline"
+                className="link-underline hidden text-sm font-medium text-ink-700 2xl:inline"
               >
                 {siteConfig.phone}
               </a>
-              <div className={cn("hidden items-center gap-2 sm:flex", open && "sm:hidden")}>
+              <div className={cn("hidden items-center gap-2 xl:flex", open && "xl:hidden")}>
                 <Link
                   href={siteConfig.instagram}
                   target="_blank"
@@ -205,7 +179,7 @@ export function Navbar() {
               className="pointer-events-none absolute -right-16 bottom-10 h-72 w-72 rounded-full bg-gold-500/20 blur-[100px]"
             />
 
-            <div className="h-16 shrink-0 sm:h-[4.25rem]" />
+            <div className="h-16 shrink-0" />
 
             <Container className="relative flex min-h-0 flex-1 flex-col pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-4">
               <nav className="flex-1 overflow-y-auto">
@@ -235,7 +209,7 @@ export function Navbar() {
                             </span>
                             <span
                               className={cn(
-                                "font-display text-3xl font-medium tracking-tight transition-colors duration-300 sm:text-4xl",
+                                "font-display text-2xl font-medium tracking-tight transition-colors duration-300 sm:text-4xl",
                                 active
                                   ? "text-gold-400"
                                   : "text-paper-50 group-hover:text-gold-400"

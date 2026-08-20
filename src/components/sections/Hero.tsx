@@ -26,33 +26,33 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-paper-50 pb-24 pt-16 sm:pb-32 sm:pt-24"
+      className="relative overflow-hidden bg-paper-50 pb-16 pt-10 sm:pb-24 sm:pt-16 lg:pb-32 lg:pt-20"
     >
       <div
         aria-hidden
         className="pointer-events-none absolute -top-48 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-gold-500/10 blur-[140px]"
       />
 
-      <Container className="relative grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+      <Container className="relative grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={container}
-          className="relative z-10"
+          className="relative z-10 min-w-0"
         >
           <motion.div
             variants={item}
-            className="mb-7 inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.22em] text-ink-700"
+            className="mb-5 inline-flex max-w-full items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-700 sm:mb-7 sm:gap-3 sm:text-[11px] sm:tracking-[0.22em]"
           >
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gold-500 text-ink-950">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500 text-ink-950">
               <CameraIcon className="h-3 w-3" strokeWidth={2.4} />
             </span>
-            Pakistan &amp; UAE&apos;s Photo Booth Company
+            <span className="leading-snug">Pakistan &amp; UAE&apos;s Photo Booth Company</span>
           </motion.div>
 
           <motion.h1
             variants={item}
-            className="font-display text-4xl font-medium leading-[1.08] tracking-tight text-ink-950 sm:text-5xl lg:text-[3.4rem]"
+            className="font-display text-[2.15rem] font-medium leading-[1.08] tracking-tight text-ink-950 sm:text-5xl lg:text-[3.4rem]"
           >
             Strike a pose.
             <br />
@@ -63,7 +63,7 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-xl text-base leading-relaxed text-ink-700 sm:text-lg"
+            className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-700 sm:mt-6 sm:text-lg"
           >
             At The Photo Booth Company, we bring good vibes, great memories,
             and a touch of vintage charm to every event, serving all across
@@ -72,23 +72,27 @@ export function Hero() {
             will love.
           </motion.p>
 
-          <motion.div variants={item} className="mt-8 flex flex-wrap gap-4">
-            <LinkButton href="#booking">Check Availability</LinkButton>
-            <LinkButton href="#products" variant="outline">
+          <motion.div variants={item} className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
+            <LinkButton href="#booking" className="w-full sm:w-auto">
+              Check Availability
+            </LinkButton>
+            <LinkButton href="#products" variant="outline" className="w-full sm:w-auto">
               View Our Photo Booths
             </LinkButton>
           </motion.div>
 
           <motion.div
             variants={item}
-            className="mt-14 flex flex-wrap gap-x-12 gap-y-6 border-t border-ink-300/30 pt-10"
+            className="mt-10 grid grid-cols-3 gap-3 border-t border-ink-300/30 pt-7 sm:mt-12 sm:gap-6 sm:pt-8"
           >
             {heroStats.map((stat) => (
-              <div key={stat.label}>
-                <div className="font-display text-3xl font-medium text-ink-950">
+              <div key={stat.label} className="min-w-0">
+                <div className="font-display text-2xl font-medium leading-none text-ink-950 sm:text-3xl">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="mt-1 text-sm text-ink-700">{stat.label}</div>
+                <div className="mt-2 text-[11px] leading-snug text-ink-700 sm:text-sm">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </motion.div>
@@ -98,7 +102,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto h-[420px] w-full max-w-md sm:h-[480px]"
+          className="relative mx-auto h-[300px] w-full max-w-sm sm:h-[420px] sm:max-w-md lg:h-[480px]"
           aria-hidden="true"
         >
           <PhotoCard

@@ -9,14 +9,14 @@ import { motion } from "framer-motion";
 
 export function Features() {
   return (
-    <section className="bg-paper-50 py-24 sm:py-32">
+    <section className="bg-paper-50 py-16 sm:py-24 lg:py-32">
       <Container>
         <SectionHeading
           eyebrow="Why The Photo Booth Company"
           title="Everything you need for picture-perfect moments"
         />
 
-        <RevealGroup className="mt-16 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        <RevealGroup className="mt-10 grid gap-8 sm:mt-16 sm:grid-cols-3 sm:gap-8">
           {features.map((feature) => {
             const Icon = iconMap[feature.icon as keyof typeof iconMap];
             return (

@@ -13,7 +13,7 @@ export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-paper-50 py-24 sm:py-32">
+    <section id="faq" className="bg-paper-50 py-16 sm:py-24 lg:py-32">
       <Container>
         <SectionHeading eyebrow="Good to Know" title="Frequently asked questions" />
 
@@ -30,7 +30,7 @@ export function Faq() {
                   >
                     <span
                       className={cn(
-                        "font-medium transition-colors",
+                        "pr-2 text-[15px] font-medium leading-snug transition-colors sm:text-base",
                         isOpen ? "text-ink-950" : "text-ink-800"
                       )}
                     >

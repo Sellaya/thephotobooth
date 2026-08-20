@@ -9,7 +9,7 @@ import { contactItems, siteConfig } from "@/lib/data";
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-white py-24 sm:py-32">
+    <section id="contact" className="bg-white py-16 sm:py-24 lg:py-32">
       <Container className="max-w-3xl">
         <SectionHeading
           eyebrow="Get In Touch"

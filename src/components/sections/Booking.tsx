@@ -72,12 +72,12 @@ export function Booking() {
   }
 
   return (
-    <section id="booking" className="bg-paper-50 py-24 sm:py-32">
+    <section id="booking" className="bg-paper-50 py-16 sm:py-24 lg:py-32">
       <Container>
         <SectionHeading eyebrow="Reserve Your Date" title="Request a booking" />
 
-        <Reveal className="mt-16 rounded-2xl border border-ink-300/25 bg-white lg:grid lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="flex flex-col justify-center gap-5 rounded-t-2xl bg-ink-950 p-9 text-paper-50 sm:p-12 lg:rounded-l-2xl lg:rounded-tr-none">
+        <Reveal className="mt-10 overflow-visible rounded-2xl border border-ink-300/25 bg-white sm:mt-16 lg:grid lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="flex flex-col justify-center gap-5 rounded-t-2xl bg-ink-950 p-6 text-paper-50 sm:p-12 lg:rounded-l-2xl lg:rounded-tr-none">
             <h3 className="font-display text-2xl font-medium sm:text-3xl">
               Let&apos;s capture the night
             </h3>
@@ -115,7 +115,7 @@ export function Booking() {
             </p>
           </div>
 
-          <div className="p-9 sm:p-12">
+          <div className="p-6 sm:p-12">
             <AnimatePresence mode="wait">
               {submitted ? (
                 <motion.div

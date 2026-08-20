@@ -6,7 +6,7 @@ import { brands } from "@/lib/data";
 
 export function TrustedBy() {
   return (
-    <section className="border-y border-ink-300/20 bg-white py-20 sm:py-24">
+    <section className="border-y border-ink-300/20 bg-white py-14 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Trusted By"

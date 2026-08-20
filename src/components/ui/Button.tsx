@@ -13,7 +13,7 @@ const variantClasses: Record<Variant, string> = {
 };
 
 const baseClasses =
-  "group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full border px-6 py-3 text-sm font-semibold tracking-tight transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-paper-50 hover:bg-paper-50 hover:text-ink-950 hover:shadow-btn active:translate-y-0 active:scale-[0.98]";
+  "group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full border px-5 py-2.5 text-sm font-semibold tracking-tight transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-paper-50 hover:bg-paper-50 hover:text-ink-950 hover:shadow-btn active:translate-y-0 active:scale-[0.98] sm:px-6 sm:py-3";
 
 function ButtonInner({
   children,

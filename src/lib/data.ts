@@ -22,7 +22,7 @@ export const navLinks = [
 export const heroStats = [
   { value: 500, suffix: "+", label: "Events Captured" },
   { value: 5, suffix: "★", label: "Average Rating", isDecimal: false },
-  { value: 3, suffix: "", label: "Booth Experiences to Choose From" },
+  { value: 3, suffix: "", label: "Booth Experiences" },
 ];
 
 export const heroImages = [

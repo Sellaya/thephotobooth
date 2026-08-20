@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 
 export function Products() {
   return (
-    <section id="products" className="bg-ink-950 py-24 sm:py-32">
+    <section id="products" className="bg-ink-950 py-16 sm:py-24 lg:py-32">
       <Container>
         <SectionHeading
           eyebrow="Our Photo Booths"
@@ -21,7 +21,7 @@ export function Products() {
           tone="dark"
         />
 
-        <RevealGroup className="mt-16 grid gap-5 sm:grid-cols-2">
+        <RevealGroup className="mt-10 grid gap-5 sm:mt-16 sm:grid-cols-2">
           {products.map((product) => {
             const Icon = iconMap[product.icon as keyof typeof iconMap];
             return (
@@ -65,7 +65,7 @@ export function Products() {
                   <LinkButton
                     href="#booking"
                     variant={product.featured ? "primary" : "ghost"}
-                    className="mt-2 self-start"
+                    className="mt-2 w-full sm:w-auto sm:self-start"
                   >
                     Enquire Now
                   </LinkButton>
@@ -90,7 +90,9 @@ export function Products() {
               We can set up almost anywhere, inquire and we&apos;ll make it happen.
             </p>
           </div>
-          <LinkButton href="#booking">Inquire Now</LinkButton>
+          <LinkButton href="#booking" className="w-full sm:w-auto">
+            Inquire Now
+          </LinkButton>
         </motion.div>
       </Container>
     </section>
