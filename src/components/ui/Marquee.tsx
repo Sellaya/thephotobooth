@@ -15,11 +15,11 @@ export function Marquee({
         className
       )}
     >
-      <div className="animate-marquee flex shrink-0 items-center gap-10 pr-10 group-hover:[animation-play-state:paused]">
+      <div className="animate-marquee flex shrink-0 items-center gap-14 pr-14 group-hover:[animation-play-state:paused] sm:gap-16 sm:pr-16">
         {children}
       </div>
       <div
-        className="animate-marquee flex shrink-0 items-center gap-10 pr-10 group-hover:[animation-play-state:paused]"
+        className="animate-marquee flex shrink-0 items-center gap-14 pr-14 group-hover:[animation-play-state:paused] sm:gap-16 sm:pr-16"
         aria-hidden="true"
       >
         {children}

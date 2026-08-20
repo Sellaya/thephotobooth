@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { CameraIcon } from "@/components/icons";
+import { CameraIcon, iconMap } from "@/components/icons";
 import { heroImages, heroStats } from "@/lib/data";
 
 const container = {
@@ -47,7 +47,7 @@ export function Hero() {
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500 text-ink-950">
               <CameraIcon className="h-3 w-3" strokeWidth={2.4} />
             </span>
-            <span className="leading-snug">Pakistan &amp; UAE&apos;s Photo Booth Company</span>
+            <span className="leading-snug">Pakistan &amp; the UAE&apos;s Photo Booth Company</span>
           </motion.div>
 
           <motion.h1
@@ -83,18 +83,27 @@ export function Hero() {
 
           <motion.div
             variants={item}
-            className="mt-10 grid grid-cols-3 gap-3 border-t border-ink-300/30 pt-7 sm:mt-12 sm:gap-6 sm:pt-8"
+            className="mt-10 grid grid-cols-3 divide-x divide-ink-300/30 border-t border-ink-300/30 pt-6 sm:mt-12 sm:pt-7"
           >
-            {heroStats.map((stat) => (
-              <div key={stat.label} className="min-w-0">
-                <div className="font-display text-2xl font-medium leading-none text-ink-950 sm:text-3xl">
-                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+            {heroStats.map((stat) => {
+              const Icon = iconMap[stat.icon];
+              return (
+                <div key={stat.label} className="min-w-0 px-3 first:pl-0 last:pr-0 sm:px-5">
+                  <div className="flex items-baseline gap-0.5 font-display text-xl font-medium leading-none tracking-tight text-ink-950 sm:text-2xl">
+                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                    {stat.showStar ? (
+                      <span className="text-[0.85em] text-gold-500" aria-hidden>
+                        ★
+                      </span>
+                    ) : null}
+                  </div>
+                  <div className="mt-2 flex items-center gap-1.5 text-[10px] leading-snug text-ink-700 sm:text-[13px]">
+                    <Icon className="h-3 w-3 shrink-0 text-gold-600 sm:h-3.5 sm:w-3.5" />
+                    <span>{stat.label}</span>
+                  </div>
                 </div>
-                <div className="mt-2 text-[11px] leading-snug text-ink-700 sm:text-sm">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
         </motion.div>
 

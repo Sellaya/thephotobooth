@@ -16,7 +16,7 @@ export function Products() {
       <Container>
         <SectionHeading
           eyebrow="Our Photo Booths"
-          title="Three ways to say cheese"
+          title="Four ways to say cheese"
           description="Every booth comes with our signature trim, fun props, and a dedicated on-site attendant to ensure everything runs smoothly. Tell us about your event, and we'll recommend the right booth for you."
           tone="dark"
         />

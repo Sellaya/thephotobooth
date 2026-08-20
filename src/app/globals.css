@@ -117,6 +117,32 @@ body {
   animation: marquee 32s linear infinite;
 }
 
+@keyframes marquee-reviews {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee-reviews {
+  animation: marquee-reviews 48s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-reviews {
+    animation: none;
+  }
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Subtle floating loop used by hero image cards */
 @keyframes float-slow {
   0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }

@@ -8,6 +8,19 @@ export const siteConfig = {
   emailHref: "mailto:hello@thephotoboothcompany.co",
   instagram: "https://www.instagram.com/photobooth.co.pk/",
   instagramHandle: "@photobooth.co.pk",
+  address: "Office 1, Phase-1 Block B DHA Phase 1, Lahore, 54000",
+};
+
+export const googleReviews = {
+  rating: 5,
+  count: 12,
+  businessName: "The PhotoBooth Co.",
+  shareUrl: "https://share.google/ATlyCeVSnD65ZCQ2A",
+  mapsUrl: "https://www.google.com/maps?cid=13895684702721899304",
+  reviewsUrl:
+    "https://www.google.com/search?q=The+PhotoBooth+Co.&kgmid=/g/11nqxm9qb4#lrd=0x39190702fde18a63:0xc0937d1ad826bb28,1",
+  writeUrl:
+    "https://www.google.com/search?q=The+PhotoBooth+Co.&kgmid=/g/11nqxm9qb4#lrd=0x39190702fde18a63:0xc0937d1ad826bb28,3",
 };
 
 export const navLinks = [
@@ -20,9 +33,9 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { value: 500, suffix: "+", label: "Events Captured" },
-  { value: 5, suffix: "★", label: "Average Rating", isDecimal: false },
-  { value: 3, suffix: "", label: "Booth Experiences" },
+  { value: 500, suffix: "+", label: "Events Captured", icon: "camera" as const },
+  { value: 5, suffix: "", label: "Average Rating", icon: "star" as const, showStar: true },
+  { value: 4, suffix: "", label: "Booth Experiences", icon: "aperture" as const },
 ];
 
 export const heroImages = [
@@ -42,13 +55,13 @@ export const features = [
     icon: "sparkle",
     title: "Fun Prop Box",
     description:
-      "Hats, glasses, signs, and vintage frames, our prop box keeps every group shot playful.",
+      "Hats, glasses, signs, and vintage frames — our prop box keeps every group shot playful.",
   },
   {
     icon: "cloud",
     title: "Online Gallery",
     description:
-      "Every shot is uploaded to a private online gallery within 48 hours, free to download and share.",
+      "Every shot is uploaded to a private online gallery within 48 hours — free to download and share.",
   },
 ];
 
@@ -126,19 +139,19 @@ export const events = [
     icon: "heart",
     title: "Weddings",
     description:
-      "From the first guest arrival to the final celebration, we blend seamlessly into your décor while keeping guests entertained and creating memories throughout the event.",
+      "From first looks to last dances, we blend into your décor and keep guests smiling with keepsakes they take home.",
   },
   {
     icon: "building",
     title: "Brand Activations & Corporate Events",
     description:
-      "Custom, branded overlays, lead capture forms, and instant social sharing for product launches and conferences.",
+      "Custom branded overlays, lead capture, and instant sharing for launches, conferences, and brand activations.",
   },
   {
     icon: "star",
     title: "Parties & Private Celebrations",
     description:
-      "Birthdays, anniversaries, and holiday parties, any excuse to get the props out is a good one.",
+      "Birthdays, anniversaries, and holiday parties — with props, prints, and energy for a night everyone remembers.",
   },
 ];
 
@@ -146,7 +159,7 @@ export const faqs = [
   {
     question: "How far in advance should I book?",
     answer:
-      "We recommend booking 4 to 6 weeks in advance for weddings and peak season dates. However, if your date is approaching sooner, feel free to reach out, we'll always do our best to accommodate last-minute bookings in Pakistan and UAE, subject to availability.",
+      "We recommend booking 4 to 6 weeks in advance for weddings and peak season dates. However, if your date is approaching sooner, feel free to reach out — we'll always do our best to accommodate last-minute bookings in Pakistan and the UAE, subject to availability.",
   },
   {
     question: "What's included in a booth rental?",
@@ -166,18 +179,18 @@ export const faqs = [
   {
     question: "When do we get our photos and videos?",
     answer:
-      "A private online gallery with every digital photo, GIF, and 360° video is shared within 48 hours of your event, free to download and share.",
+      "A private online gallery with every digital photo, GIF, and 360° video is shared within 48 hours of your event — free to download and share.",
   },
   {
     question: "Do you travel outside Pakistan and the UAE?",
     answer:
-      "We're based in Lahore, Pakistan and Dubai, UAE, and serve events all across Pakistan & the UAE. We're also expanding to Toronto, Canada and Sydney, Australia — ask us about travel for destination events elsewhere.",
+      "We're based in Lahore, Pakistan, and Dubai, UAE, and serve events all across Pakistan and the UAE. We're also expanding to Toronto, Canada, and Sydney, Australia — ask us about travel for destination events elsewhere.",
   },
   {
     question:
       "Is the print quality different between the classic, vintage, and mirror booths?",
     answer:
-      "No, the print quality and final output are the same across all three. The only difference is the design and appearance, each booth has a distinct look while delivering the same quality and experience.",
+      "No, the print quality and final output are the same across all three. The only difference is the design and appearance: each booth has a distinct look while delivering the same quality and experience.",
   },
   {
     question: "Do you offer event photography and videography?",
@@ -191,31 +204,31 @@ export const testimonials = [
     quote:
       "Had the experience of attending an event with a photobooth from the 'The Photobooth Co.' Safe to say we were all obsessed. The photos are such a cute keepsake and the person handling the equipment was extremely professional and sweet, we literally asked for a million copies of each photo and he graciously complied each time. Wonderful wedding favor concept that anyone who has the money for, should definitely go for!",
     name: "Momina Asif",
-    source: "Google Review",
+    rating: 5,
   },
   {
     quote:
       "We hired photobooth for our wedding and it was a huge hit! All of our guests couldn't stop talking about how much fun it was. The attendants were really sweet, and the photo quality was really nice. Thank you for helping make our day so special! Highly recommend to anyone looking to add some extra fun to their event!",
     name: "Ansa Kanwal",
-    source: "Google Review",
+    rating: 5,
   },
   {
     quote: "Spot on experience! Everything was great! Definitely worth it.",
     name: "Maham Bosan",
-    source: "Google Review",
+    rating: 5,
   },
   {
     quote:
       "Booked them for my wedding event and it was one of the best decisions during the whole process. Wedding keepsakes with the most special memories, love love the concept and would recommend everyone to book them!",
     name: "Zarwa Jafar",
-    source: "Google Review",
+    rating: 5,
   },
 ];
 
 export const bookingHighlights = [
-  "Readily available for call",
+  "Readily available by phone",
   "Custom quotes for multi-day & brand launch events",
-  "Serving all across Pakistan & UAE",
+  "Serving all across Pakistan & the UAE",
   "Now expanding to Toronto, Canada & Sydney, Australia",
 ];
 
@@ -239,7 +252,7 @@ export const contactItems = [
   {
     icon: "pin",
     title: "Lahore, Pakistan",
-    description: "Call or WhatsApp +92 308 6464844, available all across Pakistan",
+    description: "Call or WhatsApp +92 308 6464844 — available all across Pakistan",
   },
   {
     icon: "pin",
@@ -249,7 +262,7 @@ export const contactItems = [
   {
     icon: "pin",
     title: "Toronto, Canada & Sydney, Australia",
-    description: "We're expanding, reach out to be first in line when we launch.",
+    description: "We're expanding — reach out to be first in line when we launch.",
     soon: true,
   },
   {
@@ -271,6 +284,6 @@ export const footerLinks = {
     { label: "Contact", href: "#contact" },
     { label: "FAQs", href: "#faq" },
     { label: "Book Now", href: "#booking" },
-    { label: "Reviews", href: "#gallery" },
+    { label: "Reviews", href: "#reviews" },
   ],
 };
