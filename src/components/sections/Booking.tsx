@@ -86,26 +86,26 @@ export function Booking() {
       <Container>
         <SectionHeading eyebrow="Reserve Your Date" title="Request a booking" />
 
-        <Reveal className="mt-10 overflow-visible rounded-2xl border border-ink-300/25 bg-white sm:mt-16 lg:grid lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="flex flex-col justify-center gap-5 rounded-t-2xl bg-ink-950 p-6 text-paper-50 sm:p-12 lg:rounded-l-2xl lg:rounded-tr-none">
-            <h3 className="font-display whitespace-nowrap text-2xl font-medium sm:text-3xl">
+        <Reveal className="mt-10 overflow-hidden rounded-2xl border border-ink-300/25 bg-white sm:mt-16 lg:grid lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="flex min-w-0 flex-col justify-center gap-5 rounded-t-2xl bg-ink-950 p-6 text-paper-50 sm:p-10 lg:rounded-l-2xl lg:rounded-tr-none lg:p-12">
+            <h3 className="font-display text-2xl font-medium sm:text-3xl">
               Let&apos;s capture the night
             </h3>
-            <p className="text-ink-300 sm:whitespace-nowrap">
+            <p className="text-ink-300">
               Fill out the form and our team will confirm availability within
               24 hours.
             </p>
             <ul className="mt-2 flex flex-col gap-3">
               {bookingHighlights.map((highlight) => (
-                <li key={highlight} className="flex items-center gap-3 text-sm">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-500 text-ink-950">
+                <li key={highlight} className="flex items-start gap-3 text-sm">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-500 text-ink-950">
                     <Check className="h-3 w-3" strokeWidth={3} />
                   </span>
-                  <span className="text-ink-300 sm:whitespace-nowrap">{highlight}</span>
+                  <span className="min-w-0 text-ink-300">{highlight}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm text-ink-300">
+            <p className="mt-4 text-sm leading-relaxed text-ink-300">
               Prefer to talk it through?{" "}
               <a
                 href={siteConfig.phoneHref}
@@ -148,7 +148,7 @@ export function Booking() {
             </p>
           </div>
 
-          <div className="p-6 sm:p-12">
+          <div className="min-w-0 overflow-visible p-6 sm:p-10 lg:p-12">
             <AnimatePresence mode="wait">
               {submitted ? (
                 <motion.div
