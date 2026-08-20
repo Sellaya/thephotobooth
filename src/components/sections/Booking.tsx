@@ -9,6 +9,7 @@ import { Check, CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { Button } from "@/components/ui/Button";
 import { DatePicker, toLocalIso } from "@/components/ui/DatePicker";
 import {
   bookingHighlights,
