@@ -90,7 +90,7 @@ function ReviewCard({
             {initials(review.name)}
           </span>
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium text-ink-950">
+            <p className="truncate whitespace-nowrap text-sm font-medium text-ink-950">
               {review.name}
             </p>
             <div className="mt-1">

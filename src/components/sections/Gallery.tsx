@@ -38,7 +38,7 @@ export function Gallery() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-ink-950/10 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
-              <span className="absolute bottom-3 left-4 translate-y-1 text-sm font-medium text-paper-50 opacity-90 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              <span className="absolute bottom-3 left-4 translate-y-1 whitespace-nowrap text-sm font-medium text-paper-50 opacity-90 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                 {item.label}
               </span>
             </motion.div>

@@ -27,7 +27,7 @@ export function SectionHeading({
       {eyebrow ? (
         <span
           className={cn(
-            "inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.22em]",
+            "inline-flex items-center gap-3 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.22em]",
             tone === "dark" ? "text-gold-400" : "text-gold-600"
           )}
         >

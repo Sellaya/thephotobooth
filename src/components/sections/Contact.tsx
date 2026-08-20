@@ -33,16 +33,16 @@ export function Contact() {
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-ink-300/50 text-ink-950 transition-all duration-300 group-hover:border-gold-500 group-hover:bg-gold-500">
                   <Icon className="h-4 w-4" />
                 </span>
-                <div>
-                  <h4 className="flex flex-wrap items-center gap-2 font-medium text-ink-950">
+                <div className="min-w-0">
+                  <h4 className="flex items-center gap-2 whitespace-nowrap font-medium text-ink-950">
                     {item.title}
                     {item.soon ? (
-                      <span className="rounded-full bg-sage-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sage-600">
+                      <span className="whitespace-nowrap rounded-full bg-sage-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sage-600">
                         Coming Soon
                       </span>
                     ) : null}
                   </h4>
-                  <p className="mt-0.5 text-sm text-ink-700">
+                  <p className="mt-0.5 text-sm text-ink-700 sm:whitespace-nowrap">
                     {item.href ? (
                       <a
                         href={item.href}
@@ -62,8 +62,8 @@ export function Contact() {
 
         <Reveal className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <strong className="block font-medium">Follow the fun</strong>
-            <p className="mt-1 text-sm text-ink-700">
+            <strong className="block whitespace-nowrap font-medium">Follow the fun</strong>
+            <p className="mt-1 whitespace-nowrap text-sm text-ink-700">
               {siteConfig.instagramHandle} on Instagram
             </p>
           </div>

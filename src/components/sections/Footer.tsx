@@ -11,8 +11,8 @@ export function Footer() {
   return (
     <footer className="bg-ink-950 pb-8 pt-16 text-ink-300 sm:pt-20">
       <Container>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4">
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-[1.15fr_0.9fr_0.9fr_auto]">
+          <div className="col-span-2 lg:col-span-1">
             <div className="inline-block rounded-xl bg-paper-100 px-3 py-2.5">
               <Image
                 src="/images/logo-footer.png"
@@ -22,7 +22,7 @@ export function Footer() {
                 className="h-12 w-auto"
               />
             </div>
-            <p className="mt-5 max-w-[28ch] text-sm leading-relaxed">
+            <p className="mt-5 whitespace-nowrap text-sm leading-relaxed">
               Serving events across Pakistan &amp; the UAE.
             </p>
             <div className="mt-5 flex gap-2">
@@ -50,7 +50,7 @@ export function Footer() {
           <FooterColumn title="Explore" links={footerLinks.explore} />
           <FooterColumn title="Company" links={footerLinks.company} />
 
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2 min-w-0 lg:col-span-1">
             <h4 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-paper-50">
               Contact
             </h4>
@@ -58,18 +58,18 @@ export function Footer() {
               <li>
                 <a
                   href={siteConfig.phoneHref}
-                  className="group inline-flex items-start gap-2.5 transition-colors hover:text-paper-50"
+                  className="group inline-flex items-center gap-2.5 whitespace-nowrap transition-colors hover:text-paper-50"
                 >
-                  <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold-400" />
+                  <Phone className="h-3.5 w-3.5 shrink-0 text-gold-400" />
                   <span className="link-underline">{siteConfig.phone}</span>
                 </a>
               </li>
               <li>
                 <a
                   href={siteConfig.emailHref}
-                  className="group inline-flex items-start gap-2.5 break-all transition-colors hover:text-paper-50"
+                  className="group inline-flex items-center gap-2.5 whitespace-nowrap transition-colors hover:text-paper-50"
                 >
-                  <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold-400" />
+                  <Mail className="h-3.5 w-3.5 shrink-0 text-gold-400" />
                   <span className="link-underline">{siteConfig.email}</span>
                 </a>
               </li>
@@ -78,10 +78,10 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
-          <span>
+          <span className="whitespace-nowrap">
             © {year} {siteConfig.name}. All rights reserved.
           </span>
-          <span>Pakistan · UAE</span>
+          <span className="whitespace-nowrap">Pakistan · UAE</span>
         </div>
       </Container>
     </footer>
@@ -105,7 +105,7 @@ function FooterColumn({
           <li key={link.label}>
             <Link
               href={link.href}
-              className="link-underline text-sm transition-colors hover:text-paper-50"
+              className="link-underline whitespace-nowrap text-sm transition-colors hover:text-paper-50"
             >
               {link.label}
             </Link>

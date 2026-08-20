@@ -28,7 +28,7 @@ export function Features() {
                 <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-ink-300/50 text-ink-950 transition-all duration-300 group-hover:border-gold-500 group-hover:bg-gold-500">
                   <Icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <h3 className="font-display text-lg font-medium text-ink-950">
+                <h3 className="font-display whitespace-nowrap text-lg font-medium text-ink-950">
                   {feature.title}
                 </h3>
                 <p className="mx-auto mt-2 max-w-[32ch] text-sm leading-relaxed text-ink-700">

@@ -25,7 +25,7 @@ export function Events() {
                 <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-ink-300/50 text-ink-950 transition-all duration-300 group-hover:border-gold-500 group-hover:bg-gold-500">
                   <Icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <h3 className="font-display mx-auto min-h-[3.25rem] max-w-[18ch] text-lg font-medium leading-snug text-ink-950 sm:flex sm:items-center sm:justify-center">
+                <h3 className="font-display whitespace-nowrap text-lg font-medium text-ink-950">
                   {event.title}
                 </h3>
                 <p className="mx-auto mt-2 max-w-[34ch] text-sm leading-relaxed text-ink-700">

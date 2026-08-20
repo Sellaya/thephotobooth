@@ -114,7 +114,7 @@ export function Navbar() {
             <div className="relative z-10 flex shrink-0 items-center gap-2">
               <a
                 href={siteConfig.phoneHref}
-                className="link-underline hidden text-sm font-medium text-ink-700 2xl:inline"
+                className="link-underline hidden whitespace-nowrap text-sm font-medium text-ink-700 2xl:inline"
               >
                 {siteConfig.phone}
               </a>
@@ -244,19 +244,19 @@ export function Navbar() {
                 </p>
                 <a
                   href={siteConfig.phoneHref}
-                  className="mt-3 flex items-center gap-2 text-lg text-paper-50 transition-colors hover:text-gold-400"
+                  className="mt-3 flex items-center gap-2 whitespace-nowrap text-lg text-paper-50 transition-colors hover:text-gold-400"
                 >
                   <Phone className="h-4 w-4 text-gold-400" />
                   {siteConfig.phone}
                 </a>
                 <a
                   href={siteConfig.emailHref}
-                  className="mt-2 flex items-center gap-2 text-sm text-paper-50 transition-colors hover:text-gold-400"
+                  className="mt-2 flex items-center gap-2 whitespace-nowrap text-sm text-paper-50 transition-colors hover:text-gold-400"
                 >
                   <Mail className="h-4 w-4 text-gold-400" />
                   {siteConfig.email}
                 </a>
-                <p className="mt-1 text-sm text-ink-300">
+                <p className="mt-1 whitespace-nowrap text-sm text-ink-300">
                   {siteConfig.instagramHandle} · Pakistan &amp; the UAE
                 </p>
 

@@ -36,7 +36,7 @@ export function Products() {
                 )}
               >
                 {product.badge ? (
-                  <span className="absolute right-5 top-5 z-10 rounded-full bg-gold-500 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-950">
+                  <span className="absolute right-5 top-5 z-10 whitespace-nowrap rounded-full bg-gold-500 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-950">
                     {product.badge}
                   </span>
                 ) : null}
@@ -56,7 +56,7 @@ export function Products() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gold-500/40 text-gold-400 transition-colors duration-300 group-hover:border-gold-500 group-hover:bg-gold-500 group-hover:text-ink-950">
                     <Icon className="h-4 w-4" />
                   </div>
-                  <h3 className="font-display text-xl font-medium text-paper-50">
+                  <h3 className="font-display whitespace-nowrap text-xl font-medium text-paper-50">
                     {product.title}
                   </h3>
                   <p className="flex-1 text-sm leading-relaxed text-ink-300">
@@ -83,7 +83,7 @@ export function Products() {
           className="mt-8 flex flex-col items-center justify-between gap-5 border-t border-white/10 py-8 sm:flex-row"
         >
           <div>
-            <strong className="block font-display text-lg font-medium text-paper-50">
+            <strong className="block whitespace-nowrap font-display text-lg font-medium text-paper-50">
               Want something custom?
             </strong>
             <p className="mt-1 text-sm text-ink-300">

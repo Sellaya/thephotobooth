@@ -47,7 +47,9 @@ export function Hero() {
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500 text-ink-950">
               <CameraIcon className="h-3 w-3" strokeWidth={2.4} />
             </span>
-            <span className="leading-snug">Pakistan &amp; the UAE&apos;s Photo Booth Company</span>
+            <span className="whitespace-nowrap leading-none">
+              Pakistan &amp; the UAE&apos;s Photo Booth Company
+            </span>
           </motion.div>
 
           <motion.h1
@@ -97,7 +99,7 @@ export function Hero() {
                       </span>
                     ) : null}
                   </div>
-                  <div className="mt-2 flex items-center gap-1.5 text-[10px] leading-snug text-ink-700 sm:text-[13px]">
+                  <div className="mt-2 flex items-center gap-1.5 whitespace-nowrap text-[10px] text-ink-700 sm:text-[13px]">
                     <Icon className="h-3 w-3 shrink-0 text-gold-600 sm:h-3.5 sm:w-3.5" />
                     <span>{stat.label}</span>
                   </div>
